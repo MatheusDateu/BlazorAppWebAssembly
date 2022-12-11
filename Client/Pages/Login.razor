@@ -1,0 +1,44 @@
+﻿@page "/Logon"
+@code{
+    Autenticacao auth = new Autenticacao();
+}
+@if (auth.mensagem == string.Empty)
+{
+    <h3>Login</h3>
+    <p>Insira seu email: </p>
+    <input type="text" placeholder="email@email.com" @bind-value="auth.email" />
+    <br />
+    <p>Insira sua senha: </p>
+    <input type="password" placeholder="senha" @bind-value="auth.senha" />
+    <button class="btn btn-logon" @onclick="auth.autenticacao">Logon</button>
+}
+else
+{
+    <strong>@auth.mensagem</strong>
+}
+
+
+@code {
+    public class Autenticacao
+    {
+        public string? email { get; set; }
+        public string? senha { get; set; }
+        public string? mensagem = string.Empty;
+
+        public void autenticacao()
+        {
+            if (email.Equals("Admin") && senha.Equals("1234"))
+            {
+                mensagem = "logado com sucesso";
+            }
+            else
+            {
+                mensagem = "usuário não reconhecido, talvez você tenha informado algum dado errado, senão, crie uma conta, é fácil e rápido.";
+            }
+        }
+        public bool getAutenticado()
+        {
+            return (mensagem.Equals("logado com sucesso"));
+        }
+    }
+}
