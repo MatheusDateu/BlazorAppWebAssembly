@@ -1,6 +1,6 @@
-﻿@page "/solicitarbot"
+﻿@page "/counter"
 
-<PageTitle>Contador</PageTitle>
+<PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
@@ -9,10 +9,10 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private int currentCount = 1;
+    private int currentCount = 0;
 
     private void IncrementCount()
     {
-        currentCount *= 2;
+        currentCount++;
     }
 }

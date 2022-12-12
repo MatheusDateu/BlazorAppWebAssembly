@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\estiloSlides.css" />
     <Content Remove="wwwroot\css\estilost.css" />
   </ItemGroup>
 
