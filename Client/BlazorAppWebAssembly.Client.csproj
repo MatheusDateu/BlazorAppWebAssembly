@@ -10,21 +10,35 @@
   <ItemGroup>
     <Compile Remove="wwwroot\css\NovaPasta1\**" />
     <Compile Remove="wwwroot\css\NovaPasta\**" />
+    <Compile Remove="wwwroot\NovaPasta1\**" />
     <Compile Remove="wwwroot\NovaPasta\**" />
     <Content Remove="wwwroot\css\NovaPasta1\**" />
     <Content Remove="wwwroot\css\NovaPasta\**" />
+    <Content Remove="wwwroot\NovaPasta1\**" />
     <Content Remove="wwwroot\NovaPasta\**" />
     <EmbeddedResource Remove="wwwroot\css\NovaPasta1\**" />
     <EmbeddedResource Remove="wwwroot\css\NovaPasta\**" />
+    <EmbeddedResource Remove="wwwroot\NovaPasta1\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
     <None Remove="wwwroot\css\NovaPasta1\**" />
     <None Remove="wwwroot\css\NovaPasta\**" />
+    <None Remove="wwwroot\NovaPasta1\**" />
     <None Remove="wwwroot\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Host.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Shared\SurveyPrompt.razor" />
     <Content Remove="wwwroot\css\estiloSlides.css" />
     <Content Remove="wwwroot\css\estilost.css" />
+    <Content Remove="wwwroot\jsx.jsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\jsx.jsx" />
   </ItemGroup>
 
   <ItemGroup>

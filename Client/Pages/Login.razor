@@ -1,22 +1,64 @@
 ﻿@page "/Logon"
-@code{
+@code {
     Autenticacao auth = new Autenticacao();
+    string formTittle = "Fazer login";
+    string buttonValue = "Entrar";
 }
 @if (auth.mensagem == string.Empty)
 {
-    <h3>Login</h3>
-    <p>Insira seu email: </p>
-    <input type="text" placeholder="email@email.com" @bind-value="auth.email" />
-    <br />
-    <p>Insira sua senha: </p>
-    <input type="password" placeholder="senha" @bind-value="auth.senha" />
-    <button class="btn btn-logon" @onclick="auth.autenticacao">Logon</button>
+    <div class="conteiner">
+        <form method="post" action="mailto:mdelmondes5@gmail.com" class="caixa form-control bg-primary bg-opacity-100 bg-gradient">
+            <!--Titulo Form Cadastro-->
+            <h1 class="text text-center text-white-50 text-uppercase">@formTittle</h1>
+            <!--Email-->
+            <div class="form-control-plaintext">
+                <label for="email" class="form-label">Email: </label>
+                <input id="email" type="email" placeholder="email@email.com" class="input-group" @bind-value="auth.email" />
+            </div>
+            <!--Senha-->
+            <div class="form-control-plaintext">
+                <label for="senha" class="form-label">Senha:</label>
+                <input type="password" placeholder="senha" class="input-group" @bind-value="auth.senha" />
+            </div>
+            <!--Botao Entrar/Cadastrar-->
+            <div class="form-control-plaintext text-center">
+                <button type="submit" class="btn btn-primary" @onclick="auth.autenticacao">@buttonValue</button>
+            </div>
+        </form>
+    </div>
+
+
 }
 else
 {
-    <strong>@auth.mensagem</strong>
+    <div class="conteiner">
+        <div class="caixa">
+            <center>
+                <strong>@auth.mensagem</strong>
+                <div class="form-floating">
+                    <input type="button" class="btn btn-secondary" value="Cadastrar-se" autofocus />
+                </div>
+            </center>
+        </div>        
+    </div>
+
 }
 
+<style>
+    .conteiner {
+        width: 80vw;
+        height: 88vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caixa {
+        width: 500px;
+        height: 350px;
+    }
+</style>
 
 @code {
     public class Autenticacao

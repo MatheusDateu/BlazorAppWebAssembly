@@ -9,7 +9,9 @@ namespace BlazorAppWebAssembly.Server.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        "Despachou processos", "Assinou processos", "Envio alertas via Whatsapp", "Enviou alertas via Email", 
+        "Converteu arquivos em PDF", "Preencheu planilha", "Verificou se havia novos processos", "Alterou acessos", 
+        "Abriu chamados", "Verificou alertas"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;

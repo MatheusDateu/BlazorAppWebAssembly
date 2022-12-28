@@ -1,0 +1,18 @@
+﻿<button class="btn btn-primary" @onclick=mudaTexto>@texto</button>
+
+@code {
+    private static string? Name;
+    private static string? texto = "Mudar valor deste botão";
+
+    public static void mudaTexto()
+    {
+        if (Name == string.Empty){
+            texto = "Aleta SEI Novo";
+            Name = texto;
+        }
+        else{
+            texto = "TRR Automatizada";
+            Name = string.Empty;
+        }
+    }
+}

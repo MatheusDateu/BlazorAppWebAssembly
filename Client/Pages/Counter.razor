@@ -7,12 +7,17 @@
 <p role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-
+@rows()
 @code {
     private int currentCount = 1;
 
     private void IncrementCount()
     {
         currentCount *= 2;
+    }
+    private string rows()
+    {
+        var row = "<button>Teste</button>";
+        return row;
     }
 }

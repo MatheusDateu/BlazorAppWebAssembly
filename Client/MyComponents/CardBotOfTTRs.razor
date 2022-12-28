@@ -1,0 +1,32 @@
+﻿<div class="product-card cartao">
+    <div class="card" style="width? 8rem;">
+        <center>
+            <iframe width="750" height="412" src=@imageUrl1
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </center>        
+        <div class="card-body">
+            <h3 class="card-title"><strong>@productName</strong></h3>
+            <p class="card-text"><strong>Descrição:</strong> @productDescription</p>
+            <center>
+                <a href="" class="btn btn-primary">Ver detalhes</a>
+            </center>            
+        </div>
+    </div>
+</div>
+
+<style>
+    .catao {
+        margin-bottom: 1rem;
+    }
+</style>
+
+@code {
+    private string imageUrl1 =
+            "https://www.youtube-nocookie.com/embed/bnAzQzBI4fQ";
+    private string productName = "Realiza Tranferências de Bens Móveis";
+    private string productDescription =
+            @"Um bot desenvolvido para 
+                desumanizar o processo trabalhoso de fazer tranferências de bens móveis.";
+}
