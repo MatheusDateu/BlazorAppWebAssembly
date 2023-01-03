@@ -8,18 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\**" />
+    <Compile Remove="NovaPasta\**" />
     <Compile Remove="wwwroot\css\NovaPasta1\**" />
     <Compile Remove="wwwroot\css\NovaPasta\**" />
     <Compile Remove="wwwroot\NovaPasta1\**" />
     <Compile Remove="wwwroot\NovaPasta\**" />
+    <Content Remove="Model\**" />
+    <Content Remove="NovaPasta\**" />
     <Content Remove="wwwroot\css\NovaPasta1\**" />
     <Content Remove="wwwroot\css\NovaPasta\**" />
     <Content Remove="wwwroot\NovaPasta1\**" />
     <Content Remove="wwwroot\NovaPasta\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
     <EmbeddedResource Remove="wwwroot\css\NovaPasta1\**" />
     <EmbeddedResource Remove="wwwroot\css\NovaPasta\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta1\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
+    <None Remove="Model\**" />
+    <None Remove="NovaPasta\**" />
     <None Remove="wwwroot\css\NovaPasta1\**" />
     <None Remove="wwwroot\css\NovaPasta\**" />
     <None Remove="wwwroot\NovaPasta1\**" />
@@ -42,8 +50,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.10" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="7.0.0" />
+    <PackageReference Include="MudBlazor" Version="6.1.6" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +66,10 @@
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SharedComponents\" />
   </ItemGroup>
 
 </Project>

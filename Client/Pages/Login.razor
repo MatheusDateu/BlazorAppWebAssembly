@@ -1,4 +1,5 @@
-﻿@page "/Logon"
+﻿@layout LoginLayout
+@page "/"
 @code {
     Autenticacao auth = new Autenticacao();
     string formTittle = "Fazer login";
@@ -7,17 +8,17 @@
 @if (auth.mensagem == string.Empty)
 {
     <div class="conteiner">
-        <form method="post" action="mailto:mdelmondes5@gmail.com" class="caixa form-control bg-primary bg-opacity-100 bg-gradient">
+        <form method="post" action="mailto:mdelmondes5@gmail.com" class="caixa form-control">
             <!--Titulo Form Cadastro-->
-            <h1 class="text text-center text-white-50 text-uppercase">@formTittle</h1>
+            <h1 class="text text-center text-dark text-uppercase">@formTittle</h1>
             <!--Email-->
             <div class="form-control-plaintext">
-                <label for="email" class="form-label">Email: </label>
+                <label for="email" class="form-label text-dark">Email: </label>
                 <input id="email" type="email" placeholder="email@email.com" class="input-group" @bind-value="auth.email" />
             </div>
             <!--Senha-->
             <div class="form-control-plaintext">
-                <label for="senha" class="form-label">Senha:</label>
+                <label for="senha" class="form-label text-dark">Senha:</label>
                 <input type="password" placeholder="senha" class="input-group" @bind-value="auth.senha" />
             </div>
             <!--Botao Entrar/Cadastrar-->
@@ -26,37 +27,70 @@
             </div>
         </form>
     </div>
-
-
 }
-else
+else if (auth.getAutenticado() == true)
 {
     <div class="conteiner">
         <div class="caixa">
-            <center>
-                <strong>@auth.mensagem</strong>
-                <div class="form-floating">
-                    <input type="button" class="btn btn-secondary" value="Cadastrar-se" autofocus />
-                </div>
-            </center>
+            <div class="componentes">
+                <center>
+                    <strong class="text-uppercase" style="color: black;">@auth.mensagem</strong>
+                    <div class="form-floating">
+                        <a href="/meusbots"><input type="button" class="btn btn-success" value="Entrar no sistema" autofocus /></a>
+                    </div>
+                </center>
+            </div>
+            
         </div>        
     </div>
 
 }
+else if (auth.getAutenticado() == false)
+{
+    <div class="conteiner">
+        <form method="post" action="mailto:mdelmondes5@gmail.com" class="caixa form-control">
+            <!--Titulo Form Cadastro-->
+            <h1 class="text text-center text-dark text-uppercase">@formTittle</h1>
+            <!--Email-->
+            <div class="form-control-plaintext">
+                <label for="email" class="form-label text-dark">Email: </label>
+                <input id="email" type="email" placeholder="email@email.com" class="input-group" @bind-value="auth.email" />
+            </div>
+            <!--Senha-->
+            <div class="form-control-plaintext">
+                <label for="senha" class="form-label text-dark">Senha:</label>
+                <input type="password" placeholder="senha" class="input-group" @bind-value="auth.senha" />
+            </div>
+            <label class="text-warning">@auth.mensagem</label>
+            <!--Botao Entrar/Cadastrar-->
+            <div class="form-control-plaintext text-center">
+                <button type="submit" class="btn btn-primary" @onclick="auth.autenticacao">@buttonValue</button>
+            </div>
+        </form>
+    </div>
+}
 
 <style>
     .conteiner {
-        width: 80vw;
-        height: 88vh;
+        width: 100vw;
+        height: 100vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        background-image: linear-gradient(180deg, rgb(5, 39, 133) 0%, #3a0647 70%);
     }
 
     .caixa {
         width: 500px;
-        height: 350px;
+        height: 500px;
+        padding: 100px;
+        background-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, #ddddff 70%);
+        @*background-image: linear-gradient(180deg, rgb(5, 39, 133) 0%, #3a0647 70%); *@
+    }
+
+    .componentes {
+        margin-top: 30%;
     }
 </style>
 
@@ -71,16 +105,17 @@ else
         {
             if (email.Equals("Admin") && senha.Equals("1234"))
             {
-                mensagem = "logado com sucesso";
+                mensagem = "autenticado com sucesso";
             }
             else
             {
+
                 mensagem = "usuário não reconhecido, talvez você tenha informado algum dado errado, senão, crie uma conta, é fácil e rápido.";
             }
         }
         public bool getAutenticado()
         {
-            return (mensagem.Equals("logado com sucesso"));
+            return (mensagem.Equals("autenticado com sucesso"));
         }
     }
 }

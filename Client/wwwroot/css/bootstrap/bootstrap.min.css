@@ -2958,7 +2958,7 @@ textarea.form-control-lg {
 
     .btn-primary:hover {
         color: #fff;
-        background-color: #4bced7;
+        background-color: #0d6efc;
         border-color: #0a58ca
     }
 
@@ -11595,6 +11595,10 @@ textarea.form-control-lg {
     .d-print-none {
         display: none !important
     }
+}
+
+.corDaSideBar {
+    
 }
 
 @
