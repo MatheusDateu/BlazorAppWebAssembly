@@ -1,0 +1,26 @@
+﻿<div class="card cartao" style="width: 400px; height: 450px">
+    <div class="card-body">
+        <center class="card-img-top">
+            <iframe width="350" height="212" src=@imageUrl
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </center>
+        <div class="card-footer">
+            <h3 class="card-title"><strong>@productName</strong></h3>
+            @*<p class="card-text"><strong>Descrição:</strong> @productDescription</p>*@
+            <center>
+                <a href="/meusbots" class="btn btn-primary">Ver detalhes</a>
+            </center>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string imageUrl { get; set; }
+    [Parameter]
+    public string productName { get; set; }
+    //[Parameter]
+    //public string productDescription { get; set; }
+}

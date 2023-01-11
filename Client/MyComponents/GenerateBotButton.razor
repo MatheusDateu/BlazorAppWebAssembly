@@ -5,19 +5,19 @@
                     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
-        </center>        
+        </center>
         <div class="card-body">
             <h3 class="card-title"><strong>@productName</strong></h3>
             <p class="card-text"><strong>Descrição:</strong> @productDescription</p>
             <center>
                 <a href="/meusbots" class="btn btn-primary">Ver detalhes</a>
-            </center>            
+            </center>
         </div>
     </div>
 </div>
 
 <style>
-    .catao{
+    .catao {
         margin-bottom: 1rem;
     }
 </style>
@@ -25,10 +25,10 @@
 @code {
     private string imageUrl1 =
             "https://www.youtube.com/embed/P0IjIJKtzoY";
-    private string productName = "Alerta Sobre Novos Processos SEI via Whatsapp";
+    public string productName = "Alerta Sobre Novos Processos SEI via Whatsapp";
     private string productDescription =
-        @"Um bot desenvolvido para contribuir com os atendimentos via SEI, 
-            uma vez que quanto mais rápido um SEI novo for percebido, mais 
-            rápido será atendido. Por conseguinte, corrobora com a 
+                    @"Um bot desenvolvido para contribuir com os atendimentos via SEI,
+            uma vez que quanto mais rápido um SEI novo for percebido, mais
+            rápido será atendido. Por conseguinte, corrobora com a
             produtividade e ameniza atrasos e acúmulo de demandas.";
 }

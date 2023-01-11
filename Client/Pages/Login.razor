@@ -1,5 +1,6 @@
 ﻿@layout LoginLayout
 @page "/"
+@using BlazorAppWebAssembly.Shared.Validations;
 @code {
     Autenticacao auth = new Autenticacao();
     string formTittle = "Fazer login";
@@ -106,11 +107,11 @@ else if (auth.getAutenticado() == false)
             if (email.Equals("Admin") && senha.Equals("1234"))
             {
                 mensagem = "autenticado com sucesso";
+                AutenticaUsuario autenticaUsuario = new AutenticaUsuario(email, senha);
             }
             else
             {
-
-                mensagem = "usuário não reconhecido, talvez você tenha informado algum dado errado, senão, crie uma conta, é fácil e rápido.";
+                mensagem = "usuário ou senha incorreto.";
             }
         }
         public bool getAutenticado()
